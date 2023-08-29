@@ -2,5 +2,11 @@
 
 filename=$1
 
-gcc $filename
-./a.out
+gcc -g -Wall -Wextra -Wpedantic $filename
+
+
+if [ $? -eq 0 ]; then
+  ./a.out
+else 
+  echo "Compilation failed!"
+fi
